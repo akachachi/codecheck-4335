@@ -13,7 +13,7 @@ def main(argv):
     arg_hour = int(argv[0])
     arg_minute = int(argv[1])
 
-    if arg_hour < 0 or arg_hour > 12:
+    if arg_hour < 0 or arg_hour >= 12:
         print("rrrrr")
         return
 
