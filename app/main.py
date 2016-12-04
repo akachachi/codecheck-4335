@@ -1,57 +1,72 @@
 #!/usr/bin/env python3
 def main(argv):
-    for v in argv:
-        print(v)
+
+    arg_hour = int(argv[0])
+    arg_minute = int(argv[1])
+
+    if arg_hour < 0 or arg_hour > 12:
+        print("rrrrr")
+        return
+
+    #5分刻みではない場合
+    if arg_minute%5 != 0:
+        print("rrrrrr")
+        return
+
+    #0~55ではない場合
+    if arg_minute/5 < 0 or arg_minute/5 > 12:
+        print("rrrrr")
+        return
 
     result = []
     colors = ["w", "b", "g", "r"] 
-    for 1_1_color in colors:
-        for 1_2_color in colors:
-            for 2_color in colors:
-                for 3_color in colors:
-                    for 5_color in colors:
+    for color_1_1 in colors:
+        for color_1_2 in colors:
+            for color_2 in colors:
+                for color_3 in colors:
+                    for color_5 in colors:
                         blue = 0
-                        if 1_1_color == "b":
+                        if color_1_1 == "b":
                             blue += 1
-                        if 1_2_color == "b":
+                        if color_1_2 == "b":
                             blue += 1
-                        if 2_color == "b":
+                        if color_2 == "b":
                             blue += 2
-                        if 3_color == "b":
+                        if color_3 == "b":
                             blue += 3
-                        if 5_color == "b":
+                        if color_5 == "b":
                             blue += 5
 
                         green = 0
-                        if 1_1_color == "g":
+                        if color_1_1 == "g":
                             green += 1
-                        if 1_2_color == "g":
+                        if color_1_2 == "g":
                             green += 1
-                        if 2_color == "g":
+                        if color_2 == "g":
                             green += 2
-                        if 3_color == "g":
+                        if color_3 == "g":
                             green += 3
-                        if 5_color == "g":
+                        if color_5 == "g":
                             green += 5
 
                         red = 0
-                        if 1_1_color == "r":
+                        if color_1_1 == "r":
                             red += 1
-                        if 1_2_color == "r":
+                        if color_1_2 == "r":
                             red += 1
-                        if 2_color == "r":
+                        if color_2 == "r":
                             red += 2
-                        if 3_color == "r":
+                        if color_3 == "r":
                             red += 3
-                        if 5_color == "r":
+                        if color_5 == "r":
                             red += 5
 
                         hour = blue + green
                         minute = (green + red) * 5
 
-                        if argv[0] == hour and argv[1] == minute:
-                            string = 1_1_color + 1_2_color + 2_color + 3_color + 5_color
+                        if int(argv[0]) == hour and int(argv[1]) == minute:
+                            string = color_1_1 + color_1_2 + color_2 + color_3 + color_5
                             result.append(string)
                           
-
-    print(result)
+    result = sorted(result)
+    print(result[0])
