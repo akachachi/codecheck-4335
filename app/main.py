@@ -1,6 +1,15 @@
 #!/usr/bin/env python3
 def main(argv):
 
+    #入力が10進数ではなかった場合,先頭に0がある場合
+    if argv[0][0] == "0" and len(argv[0][0]) != 1:
+        print("rrrrr")
+        return
+
+    if argv[1][0] == "0" and len(argv[1][0]) != 1:
+        print("rrrrr")
+        return
+    
     arg_hour = int(argv[0])
     arg_minute = int(argv[1])
 
@@ -9,7 +18,7 @@ def main(argv):
         return
 
     #5分刻みではない場合
-    if arg_minute%5 != 0:
+    if arg_minute%5 != 0 and arg_minute != 0:
         print("rrrrrr")
         return
 
