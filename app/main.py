@@ -19,7 +19,7 @@ def main(argv):
 
     #5分刻みではない場合
     if arg_minute%5 != 0 and arg_minute != 0:
-        print("rrrrrr")
+        print("rrrrr")
         return
 
     #0~55ではない場合
